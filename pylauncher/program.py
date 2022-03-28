@@ -11,6 +11,9 @@ def programEncoder(program):
 
 def programDecoder(jsonstr):
     program_dict = json.load(jsonstr)
+    program_arr = []
 
     for program in program_dict:
-        pass
+        program_arr.append(Program(program["name"], program["path"]))
+    
+    return program_arr
